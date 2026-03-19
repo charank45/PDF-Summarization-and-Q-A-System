@@ -1,6 +1,33 @@
 # PDF-Summarization-and-Q-A-System
 
 Retrieval-Augmented Generation (RAG) Pipeline
+**1. Project Overview
+**
+This project implements a Retrieval-Augmented Generation (RAG) system that enables efficient question answering and summarization over PDF documents. It combines semantic search with a language model to generate accurate, context-aware responses.
+
+The system processes documents, converts them into embeddings, retrieves relevant chunks, and generates responses using a lightweight language model.
+
+**2. Key Features
+**
+PDF ingestion and processing
+
+Semantic chunking with controlled token size
+
+Vector database using FAISS
+
+Embedding generation using SentenceTransformers
+
+Context-aware response generation using LLM
+
+Page-level and chunk-level retrieval
+
+Bounding box metadata support (for visual traceability)
+
+Question Answering over documents
+
+Text Summarization (page-wise / full document)
+
+Retrieval-Augmented Generation (RAG) Pipeline
 1. Project Overview
 
 This project implements a Retrieval-Augmented Generation (RAG) system that enables efficient question answering and summarization over PDF documents. It combines semantic search with a language model to generate accurate, context-aware responses.
@@ -27,8 +54,8 @@ Question Answering over documents
 
 Text Summarization (page-wise / full document)
 
-3. System Architecture
-Pipeline Flow
+**3. System Architecture
+**Pipeline Flow
 
 PDF Input
 
@@ -48,8 +75,8 @@ Context Retrieval
 
 Response Generation (LLM)
 
-4. Tech Stack
-Core Libraries
+**4. Tech Stack
+**Core Libraries
 
 Python
 
@@ -69,8 +96,8 @@ LLM: TinyLlama / Phi-2
 
 Summarization Model: facebook/bart-large-cnn
 
-5. Project Structure
-project/
+**5. Project Structure
+**project/
 │
 ├── data/                     # Input PDFs
 ├── embeddings/              # Saved vector store
@@ -81,8 +108,9 @@ project/
 ├── requirements.txt
 └── README.md
 
-7. Usage
-Run Notebook
+
+**6. Usage
+**Run Notebook
 
 Open:
 
@@ -102,45 +130,45 @@ Summaries of documents
 
 Retrieved context chunks
 
-8. Core Components
-8.1 Text Extraction
+**7. Core Components
+**7.1 Text Extraction
 
 Uses PyMuPDF
 
 Extracts text along with positional metadata
 
-8.2 Chunking Strategy
+7.2 Chunking Strategy
 
 Chunk size: 250–500 tokens
 
 Overlap ensures context continuity
 
-8.3 Embeddings
+7.3 Embeddings
 
 Converts text chunks into dense vectors
 
 Enables semantic similarity search
 
-8.4 Vector Store (FAISS)
+7.4 Vector Store (FAISS)
 
 Stores embeddings
 
 Performs fast nearest neighbor search
 
-8.5 Retrieval
+7.5 Retrieval
 
 Top-k relevant chunks selected
 
 Based on cosine similarity
 
-8.6 Generation
+7.6 Generation
 
 Retrieved context passed to LLM
 
 LLM generates final answer
 
-9. Example Workflow
-
+**8. Example Workflow
+**
 Upload PDF
 
 System splits into chunks
@@ -153,8 +181,8 @@ Relevant chunks retrieved
 
 LLM generates answer
 
-10. Configuration
-
+**9. Configuration
+**
 Key parameters:
 
 CHUNK_SIZE = 500
@@ -162,8 +190,9 @@ CHUNK_OVERLAP = 50
 TOP_K = 3
 EMBEDDING_MODEL = "BAAI/bge-small-en-v1.5"
 LLM_MODEL = "TinyLlama / Phi-2"
-11. Advantages
 
+**10. Advantages
+**
 Reduces hallucination using real context
 
 Works on private/local documents
@@ -172,16 +201,16 @@ Efficient retrieval with FAISS
 
 Lightweight and scalable
 
-12. Limitations
-
+**11. Limitations
+**
 Performance depends on chunk quality
 
 Limited by embedding model accuracy
 
 Small LLM may reduce response quality
 
-13. Future Improvements
-
+**12. Future Improvements
+**
 Hybrid search (BM25 + embeddings)
 
 Better reranking models
@@ -192,8 +221,8 @@ Voice input/output integration
 
 Multi-document reasoning
 
-14. Requirements
-
+**13. Requirements
+**
 Example requirements.txt:
 
 langchain
@@ -203,17 +232,17 @@ pymupdf
 transformers
 torch
 gradio
-15. Author
 
-Name: charan sai
+**14. Author
+**
+Name: charan
 
 Project Type: Machine Learning / NLP / RAG System
 
-Personal Project
+PersonalProject
 
-
-17. Notes
-
+**15. Notes
+**
 Designed for educational and research purposes
 
-Can be extended into production-grade QA systems
+Can be extended into production-grade QA systemsPipeline Flow
